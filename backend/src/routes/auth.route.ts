@@ -13,4 +13,4 @@ router.post("/logout", isAuthenticated, getLogout)
 
 router.get("/check", isAuthenticated, getCheckAuth)
 
-router.put("/update-profile", isAuthenticated, fileParser, updateProfile)
+router.patch("/update-profile", isAuthenticated, fileParser, updateProfile)

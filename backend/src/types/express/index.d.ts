@@ -1,4 +1,5 @@
 import express from "express";
+import { File } from "formidable";
 
 declare global {
     namespace Express {
@@ -8,7 +9,9 @@ declare global {
                 email: string
                 fullName: string
                 profilePic?: string
-            }
+                createdAt?: Date
+            },
+            files: { [key: string]: File };
         }
     }
 }

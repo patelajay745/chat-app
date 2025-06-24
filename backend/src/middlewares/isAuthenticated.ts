@@ -25,7 +25,7 @@ export const isAuthenticated = asyncHandler(async (req: Request, res: Response, 
         throw new ApiError(401, "Unauthorized")
     }
 
-    req.user = { id, email: user.email, fullName: user.fullName, profilePic: user.profilePic }
+    req.user = { id, email: user.email, fullName: user.fullName, profilePic: user.profilePic, createdAt: user.createdAt }
 
     next()
 })

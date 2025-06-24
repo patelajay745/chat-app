@@ -2,6 +2,7 @@ import { z } from "zod"
 
 const envSchema = z.object({
     PORT: z.string().optional(),
+    NODE_ENV: z.string().optional(),
     BASEURL: z.string().min(1, { message: "Base is required" }),
     MONGO_URI: z.string().min(1, { message: "MONGO_URI is required" }),
     JWT_SECRET: z.string().min(1, { message: "JWT_SECRET is required" }),

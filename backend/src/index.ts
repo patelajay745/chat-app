@@ -9,6 +9,6 @@ const PORT = env.PORT ?? 8000
 const httpServer = http.createServer(app)
 
 connectDB().then(() => httpServer.listen(PORT, () => {
-    console.log(`server running on ${env.BASEURL}:${PORT}`)
+    console.log(`server running on ${PORT}`)
 }))
 

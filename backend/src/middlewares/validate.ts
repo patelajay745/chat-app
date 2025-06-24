@@ -10,8 +10,9 @@ export const validate = (schema: z.ZodSchema) => {
         } catch (error) {
             if (error instanceof z.ZodError) {
                 next(new ApiError(400, error.errors[0].message))
-
+                return
             }
+
             next(new ApiError(500, "Internal Server Error"))
         }
     }

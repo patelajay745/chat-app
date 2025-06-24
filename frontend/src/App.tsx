@@ -7,15 +7,16 @@ import Settings from "./pages/Settings";
 import Profile from "./pages/Profile";
 import { useAuthStore } from "./store/useAuthStore";
 import { useEffect } from "react";
+import { Toaster } from "sonner";
 
 function App() {
-  const { checkAuth, isCheckingAuth, user } = useAuthStore();
+  const { checkAuth, isLoading, user } = useAuthStore();
 
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
 
-  if (isCheckingAuth && !user)
+  if (isLoading && !user)
     return (
       <div className="h-screen flex items-center justify-center">
         <span className="loading loading-ball loading-xl"></span>
@@ -48,6 +49,7 @@ function App() {
             element={user ? <Profile /> : <Navigate to="/login" />}
           />
         </Routes>
+        <Toaster richColors />
       </div>
     </>
   );

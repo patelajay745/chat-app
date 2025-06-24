@@ -6,7 +6,8 @@ interface UserType extends Document {
     email: string,
     fullName: string,
     password: string,
-    profilePic: string
+    profilePic: string,
+    createdAt: Date;
 }
 
 interface Methods {
